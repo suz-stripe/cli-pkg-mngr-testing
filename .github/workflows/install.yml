@@ -7,14 +7,14 @@ on: workflow_dispatch
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  brew test:
+  brew_test:
     runs-on: macos
     steps:
       - name: brew tap / install 
         run: |
            brew tap suz-stripe/stripe https://github.com/suz-stripe/cli-pkg-mngr-testing
            brew install suz-stripe/stripe/brew/stripe
-  scoop test:
+  scoop_test:
     runs-on: windows
     steps:
       - name: scoop bucket / install
