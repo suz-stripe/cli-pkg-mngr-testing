@@ -15,7 +15,7 @@ jobs:
            brew tap suz-stripe/stripe https://github.com/suz-stripe/cli-pkg-mngr-testing
            ls -la /usr/local/Homebrew/Library/Taps/suz-stripe/homebrew-stripe
            ls -la /usr/local/Homebrew/Library/Taps/suz-stripe/
-           brew install suz-stripe/stripe/brew/stripe
+           brew install suz-stripe/stripe/stripe/brew/stripe
   scoop_test:
     runs-on: windows-latest
     steps:
@@ -23,5 +23,5 @@ jobs:
         run: |
            Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
            scoop bucket add suz-stripe-cli https://github.com/suz-stripe/cli-pkg-mngr-testing.git
-           sccop install suz-stripe-cli/scoop/stripe
+           scoop install suz-stripe-cli/scoop/stripe
         shell: pwsh
