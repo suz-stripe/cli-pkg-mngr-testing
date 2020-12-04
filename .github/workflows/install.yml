@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: brew / scoop install test
+
+# Controls when the action will run. 
+on: workflow_dispatch
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  brew test:
+    runs-on: macos
+    steps:
+      - name: brew tap / install 
+        run: |
+           brew tap suz-stripe/stripe https://github.com/suz-stripe/cli-pkg-mngr-testing
+           brew install suz-stripe/stripe/brew/stripe
+  scoop test:
+    runs-on: windows
+    steps:
+      - name: scoop bucket / install
+        run: |
+           scoop bucket add suz-stripe-cli https://github.com/suz-stripe/cli-pkg-mngr-testing.git
+           sccop install suz-stripe-cli/scoop/stripe
