@@ -2,16 +2,16 @@
 class Stripe < Formula
   desc "Stripe CLI utility"
   homepage "https://stripe.com"
-  version "1.5.5"
+  version "1.5.21"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/stripe/stripe-cli/releases/download/v1.5.5/stripe_1.5.5_mac-os_x86_64.tar.gz"
-    sha256 "2030b4e28ec760b8b1a9337c53ec514ab807e15897f1d0f3fb259136d35de53b"
+    url "https://github.com/suz-stripe/stripe-cli/releases/download/v1.5.21/stripe_1.5.21_mac-os_x86_64.tar.gz"
+    sha256 "7d4d61a078186ae4fbece609e4de32c06d189f97143ef7106439a89001ff2a45"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/stripe/stripe-cli/releases/download/v1.5.5/stripe_1.5.5_linux_x86_64.tar.gz"
-      sha256 "92cb3b72e2d2d86ed9fce281461eff58d21c556f743299618f77a5c13859e8a3"
+      url "https://github.com/suz-stripe/stripe-cli/releases/download/v1.5.21/stripe_1.5.21_linux_x86_64.tar.gz"
+      sha256 "dbac49c3cb0e2609fe9e83088f608dde300936ff39999e0a09f4758f9896e0d8"
     end
   end
 
@@ -30,5 +30,10 @@ class Stripe < Formula
         if [[ -f $e ]]; then source $e; fi
       }
     EOS
+  end
+
+  def caveats; <<~EOS
+    ❤ Thanks for installing the Stripe CLI! If this is your first time using the CLI, be sure to run `stripe login` first.
+  EOS
   end
 end
