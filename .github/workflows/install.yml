@@ -1,11 +1,7 @@
-# This is a basic workflow to help you get started with Actions
-
 name: brew / scoop / apt install test
 
-# Controls when the action will run. 
 on: workflow_dispatch
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   brew_test:
     runs-on: macos-latest
@@ -13,8 +9,6 @@ jobs:
       - name: brew tap / install 
         run: |
            brew tap suz-stripe/stripe https://github.com/suz-stripe/cli-pkg-mngr-testing
-           ls -la /usr/local/Homebrew/Library/Taps/suz-stripe/homebrew-stripe
-           ls -la /usr/local/Homebrew/Library/Taps/suz-stripe/homebrew-stripe/brew
            brew install /usr/local/Homebrew/Library/Taps/suz-stripe/homebrew-stripe/brew/stripe.rb
   scoop_test:
     runs-on: windows-latest
