@@ -24,3 +24,10 @@ jobs:
            Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
            scoop install https://raw.githubusercontent.com/suz-stripe/cli-pkg-mngr-testing/master/scoop/stripe.json
         shell: pwsh
+  apt_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install .deb pkg
+        run: |
+          wget https://github.com/suz-stripe/stripe-cli/releases/download/v1.5.21/stripe_1.5.21_linux_amd64.deb
+          sudo apt install ./stripe_1.5.21_linux_amd64.deb
