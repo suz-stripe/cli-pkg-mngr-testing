@@ -22,6 +22,5 @@ jobs:
       - name: scoop bucket / install
         run: |
            Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-           scoop bucket add stripe https://raw.githack.com/suz-stripe/cli-pkg-mngr-testing/master/scoop/stripe.json
-           scoop install stripe
+           scoop install https://raw.githubusercontent.com/suz-stripe/cli-pkg-mngr-testing/master/scoop/stripe.json
         shell: pwsh
