@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: brew / scoop install test
+name: brew / scoop / apt install test
 
 # Controls when the action will run. 
 on: workflow_dispatch
@@ -29,5 +29,5 @@ jobs:
     steps:
       - name: install .deb pkg
         run: |
-          wget https://github.com/suz-stripe/stripe-cli/releases/download/v1.5.21/stripe_1.5.21_linux_amd64.deb
+          wget -q https://github.com/suz-stripe/stripe-cli/releases/download/v1.5.21/stripe_1.5.21_linux_amd64.deb
           sudo apt install ./stripe_1.5.21_linux_amd64.deb
